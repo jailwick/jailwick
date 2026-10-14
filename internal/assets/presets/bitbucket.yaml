@@ -1,0 +1,7 @@
+description: "Bitbucket: clone, fetch, push"
+category: code
+hosts: [".bitbucket.org"]
+detect:
+  remotes: [bitbucket.org]
+broad: anyone can push to their own repositories
+docs: https://support.atlassian.com/bitbucket-cloud/

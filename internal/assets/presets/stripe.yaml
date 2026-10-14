@@ -1,0 +1,6 @@
+description: The Stripe API
+category: services
+hosts: [api.stripe.com, files.stripe.com]
+detect:
+  packages: [stripe, "@stripe/stripe-js", "github.com/stripe/stripe-go*"]
+docs: https://docs.stripe.com

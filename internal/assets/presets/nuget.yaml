@@ -1,0 +1,6 @@
+description: ".NET packages (NuGet)"
+category: packages
+hosts: [".nuget.org"]
+detect:
+  files: ["*.csproj", "*.fsproj", "*.sln", nuget.config, NuGet.Config, packages.config]
+docs: https://learn.microsoft.com/nuget/

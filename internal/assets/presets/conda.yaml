@@ -1,0 +1,6 @@
+description: Conda packages (Anaconda channels and conda-forge)
+category: packages
+hosts: [conda.anaconda.org, repo.anaconda.com]
+detect:
+  files: [environment.yml, environment.yaml, conda-lock.yml]
+docs: https://docs.conda.io

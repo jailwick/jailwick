@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- The jailwick.app bundle. `make app` puts the version in place of VERSION. -->
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>jailwick</string>
+	<key>CFBundleDisplayName</key>
+	<string>jailwick</string>
+	<key>CFBundleIdentifier</key>
+	<string>app.jailwick.desktop</string>
+	<key>CFBundleExecutable</key>
+	<string>jailwick-app</string>
+	<key>CFBundleIconFile</key>
+	<string>jailwick</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>VERSION</string>
+	<key>CFBundleVersion</key>
+	<string>VERSION</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.developer-tools</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>jailwick opens sessions in your terminal, and brings a session's terminal tab to the front.</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSSupportsAutomaticGraphicsSwitching</key>
+	<true/>
+</dict>
+</plist>

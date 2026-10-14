@@ -1,0 +1,7 @@
+description: Playwright browser downloads (when the sandbox installs browsers)
+category: toolchains
+hosts: [cdn.playwright.dev, playwright.download.prss.microsoft.com, storage.googleapis.com]
+detect:
+  packages: ["@playwright/test", playwright, playwright-core]
+broad: "storage.googleapis.com is all of Google Cloud Storage: any bucket can receive uploads"
+docs: https://playwright.dev/docs/browsers

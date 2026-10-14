@@ -1,0 +1,7 @@
+description: "GitLab: clone, fetch, push, the container and package registries"
+category: code
+hosts: [".gitlab.com"]
+detect:
+  remotes: [gitlab.com]
+broad: anyone can push to their own projects and snippets
+docs: https://docs.gitlab.com

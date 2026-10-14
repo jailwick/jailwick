@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=jailwick
+Comment=AI coding agents in a sandbox per repo
+Exec=jailwick-app
+Icon=jailwick
+Terminal=false
+Categories=Development;
+StartupWMClass=jailwick

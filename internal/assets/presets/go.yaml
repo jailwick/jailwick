@@ -1,0 +1,6 @@
+description: "Go modules, through the Go module proxy and checksum database"
+category: packages
+hosts: [proxy.golang.org, sum.golang.org]
+detect:
+  files: [go.mod]
+docs: https://proxy.golang.org

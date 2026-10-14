@@ -1,0 +1,6 @@
+description: "Python packages (pip, uv, Poetry)"
+category: packages
+hosts: [pypi.org, files.pythonhosted.org]
+detect:
+  files: ["requirements*.txt", pyproject.toml, setup.py, setup.cfg, Pipfile, uv.lock, poetry.lock]
+docs: https://pypi.org/help/

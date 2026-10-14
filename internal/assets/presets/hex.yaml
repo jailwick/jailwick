@@ -1,0 +1,6 @@
+description: Elixir and Erlang packages (Hex)
+category: packages
+hosts: [".hex.pm"]
+detect:
+  files: [mix.exs, rebar.config]
+docs: https://hex.pm/docs

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- jailwick app icon, night: dark tile, lit sphere in a recessed cell, light metal bars casting shadows -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#25352c"/>
+      <stop offset="1" stop-color="#121b16"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef2ef"/>
+      <stop offset="1" stop-color="#b9c5bd"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1611"/>
+      <stop offset="1" stop-color="#16261d"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="452" cy="478" r="217.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#26a662"/>
+      <stop offset="0.45" stop-color="#1e9e5a"/>
+      <stop offset="1" stop-color="#0e5733"/>
+    </radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.35" stop-color="#dfe6e1"/>
+      <stop offset="1" stop-color="#93a49a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="512" cy="548" r="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1e9e5a" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#1e9e5a" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="topHalf"><rect x="0" y="0" width="1024" height="342"/></clipPath>
+    <clipPath id="window"><rect x="200" y="302" width="624" height="420" rx="84"/></clipPath>
+    <filter id="soft" x="-50%" y="-10%" width="200%" height="120%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="ground" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="inset" x="-10%" y="-10%" width="120%" height="120%">
+      <feOffset dy="14"/><feGaussianBlur stdDeviation="12" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="arithmetic" k2="-1" k3="1"/>
+    </filter>
+    <filter id="lift" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#tile)"/>
+  </g>
+  <g clip-path="url(#window)">
+    <rect x="200" y="302" width="624" height="420" fill="url(#wall)"/>
+    <rect x="200" y="302" width="624" height="420" fill="url(#glow)"/>
+    <ellipse cx="512" cy="694" rx="120" ry="16" fill="#000" opacity="0.6" filter="url(#ground)"/>
+    <circle cx="512" cy="548" r="150" fill="url(#orb)"/>
+    <g fill="#000" opacity="0.55" filter="url(#soft)">
+      <rect x="323.2" y="302" width="32" height="440"/>
+      <rect x="454.4" y="302" width="32" height="440"/>
+      <rect x="585.6" y="302" width="32" height="440"/>
+      <rect x="716.8" y="302" width="32" height="440"/>
+    </g>
+    <rect x="200" y="302" width="624" height="420" fill="none" stroke="#000" stroke-opacity=".45" stroke-width="30" filter="url(#inset)"/>
+    <g fill="url(#bar)">
+      <rect x="299.2" y="302" width="32" height="420"/>
+      <rect x="430.4" y="302" width="32" height="420"/>
+      <rect x="561.6" y="302" width="32" height="420"/>
+      <rect x="692.8" y="302" width="32" height="420"/>
+    </g>
+  </g>
+  <g filter="url(#lift)">
+    <rect x="200" y="302" width="624" height="420" rx="84" fill="none" stroke="url(#frame)" stroke-width="32"/>
+  </g>
+  <rect x="185.5" y="287.5" width="653" height="449" rx="98.5" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="3" clip-path="url(#topHalf)"/>
+  <rect x="101.5" y="101.5" width="821" height="821" rx="183.5" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="3"/>
+</svg>

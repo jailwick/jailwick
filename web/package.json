@@ -1,0 +1,24 @@
+{
+  "name": "jailwick-web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "panda codegen",
+    "dev": "panda codegen && vite",
+    "build": "panda codegen && vite build",
+    "check": "panda codegen && svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^2.2.0",
+    "@pandacss/preset-base": "^2.2.0",
+    "@pandacss/preset-panda": "^2.2.0",
+    "@sveltejs/vite-plugin-svelte": "^6.0.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "postcss": "^8.5.30",
+    "svelte": "^5.38.0",
+    "svelte-check": "^4.3.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0"
+  }
+}

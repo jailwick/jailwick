@@ -1,0 +1,11 @@
+{
+  "theme": "auto",
+  "hooks": {
+    "WorktreeCreate": [
+      { "hooks": [{ "type": "command", "command": "/opt/jailwick/bin/jailwick-agent worktree-hook create" }] }
+    ],
+    "WorktreeRemove": [
+      { "hooks": [{ "type": "command", "command": "/opt/jailwick/bin/jailwick-agent worktree-hook remove" }] }
+    ]
+  }
+}

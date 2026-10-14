@@ -1,0 +1,7 @@
+description: "Supabase projects (database API, auth, storage)"
+category: services
+hosts: [".supabase.co"]
+detect:
+  packages: ["@supabase/supabase-js", supabase, github.com/supabase-community/supabase-go]
+broad: "any Supabase project's storage can receive uploads"
+docs: https://supabase.com/docs

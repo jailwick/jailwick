@@ -1,0 +1,4 @@
+description: Python documentation
+category: docs
+hosts: [docs.python.org]
+docs: https://docs.python.org

@@ -1,0 +1,13 @@
+/bin/
+/dist/
+/dist-app/
+/internal/assets/agent/jailwick-agent-*
+/internal/assets/agent/agent-info.json
+/internal/webui/dist/
+*.test
+coverage.out
+/review/
+/.idea/
+
+# Panda
+styled-system

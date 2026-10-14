@@ -1,0 +1,55 @@
+# jailwick's layer for one project, generated from its image settings: what it adds to its base
+# (jailwick's or the project's own). Steps that change least come first, so a change rebuilds only
+# what follows it; downloads are checked and kept in BuildKit cache mounts between builds.
+ARG BASE
+FROM ${BASE}
+
+USER root
+ARG SANDBOX_USER=node
+ARG SANDBOX_HOME=/home/node
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Prerequisites: on any Debian or Ubuntu base, the tools the steps below use and Node.js for
+# installing Claude Code. On jailwick's base, nothing to do.
+RUN {{mounts "prereqs.sh"}}NODE_DEFAULT={{.NodeDefault}} sh /tmp/jw/prereqs.sh
+{{- if .Browsers}}
+
+# Playwright: {{.Browsers}}. Right after the prerequisites, before the stacks, so projects with the
+# same browsers and Playwright versions share this step whatever their stacks, and a stack change
+# doesn't redo it. It runs with the prerequisites' Node.js, not a stack's.
+RUN {{mounts "playwright.sh"}}BROWSERS="{{.Browsers}}" VERSIONS="{{.PlaywrightVersions}}" sh /tmp/jw/playwright.sh
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+{{- end}}
+{{- if .Android}}
+
+# Android (forces linux/amd64).
+RUN {{mounts "android.sh"}}sh /tmp/jw/android.sh
+ENV ANDROID_HOME=/opt/android-sdk \
+    ANDROID_SDK_ROOT=/opt/android-sdk \
+    PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools
+{{- end}}
+{{- range .Stacks}}
+
+{{.Fragment}}
+{{- end}}
+{{- if .AptPackages}}
+
+# The project's apt packages.
+RUN {{mounts}}apt-get update -q && apt-get install -y --no-install-recommends {{.AptPackages}}
+{{- end}}
+
+# The sandbox user's home.
+RUN {{mounts "home.sh"}}sh /tmp/jw/home.sh
+
+# Claude Code, with jailwick's Node.js whatever the project's. jailwick resolves "latest" to a
+# version, so this layer is rebuilt only for a new release. It goes to /usr/local: the npm prefix
+# ~/.local is a volume at runtime and would keep serving the first version installed.
+ARG CLAUDE_CODE_VERSION=latest
+RUN {{mounts}}PATH=/usr/local/bin:$PATH npm install -g --prefix /usr/local "@anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}"
+
+# At runtime the user's own installs (npm -g, uv tool, go install, cargo install, bun add -g) go to
+# ~/.local, a volume that keeps them.
+ENV NPM_CONFIG_PREFIX=${SANDBOX_HOME}/.local \
+    PATH=${SANDBOX_HOME}/.local/bin:$PATH
+USER ${SANDBOX_USER}
+WORKDIR ${SANDBOX_HOME}

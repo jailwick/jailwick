@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+  <!-- jailwick mark: the green dot in a cell behind four bars -->
+  <style>
+    .tile { fill: #f2f6f3; stroke: rgba(0,0,0,.1); }
+    .wall { fill: #dbe4de; }
+    .cage { fill: #2b3d33; }
+    .frame { stroke: #2b3d33; }
+    @media (prefers-color-scheme: dark) {
+      .tile { fill: #1f2c25; stroke: rgba(255,255,255,.08); }
+      .wall { fill: #0e1712; }
+      .cage { fill: #dfe6e1; }
+      .frame { stroke: #dfe6e1; }
+    }
+  </style>
+  <rect class="tile" x=".5" y=".5" width="23" height="23" rx="5.25" stroke-width="1"/>
+  <rect class="wall" x="3.5" y="6.25" width="17" height="11.5" rx="3"/>
+  <circle cx="12" cy="12.6" r="3.9" fill="#1e9e5a"/>
+  <g class="cage">
+    <rect x="6.47" y="6.25" width="1.1" height="11.5"/>
+    <rect x="9.79" y="6.25" width="1.1" height="11.5"/>
+    <rect x="13.11" y="6.25" width="1.1" height="11.5"/>
+    <rect x="16.43" y="6.25" width="1.1" height="11.5"/>
+  </g>
+  <rect class="frame" x="3.5" y="6.25" width="17" height="11.5" rx="3" fill="none" stroke-width="1.5"/>
+</svg>

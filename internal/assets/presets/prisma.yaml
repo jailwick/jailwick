@@ -1,0 +1,6 @@
+description: Prisma engines
+category: toolchains
+hosts: [binaries.prisma.sh]
+detect:
+  packages: [prisma, "@prisma/client"]
+docs: https://www.prisma.io/docs

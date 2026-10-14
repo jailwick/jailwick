@@ -1,0 +1,6 @@
+description: Deno and its module hosts
+category: toolchains
+hosts: [".deno.land"]
+detect:
+  files: [deno.json, deno.jsonc]
+docs: https://docs.deno.com

@@ -1,0 +1,6 @@
+description: Rust toolchains (rustup)
+category: toolchains
+hosts: [static.rust-lang.org]
+detect:
+  files: [rust-toolchain, rust-toolchain.toml]
+docs: https://rust-lang.github.io/rustup/

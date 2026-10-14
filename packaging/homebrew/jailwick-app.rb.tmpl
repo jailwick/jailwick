@@ -1,0 +1,18 @@
+# The desktop app's Homebrew cask, filled in by scripts/release-mac.sh (version, checksum) and
+# committed to the tap (jailwick/homebrew-tap, Casks/jailwick-app.rb).
+cask "jailwick-app" do
+  version "@VERSION@"
+  sha256 "@SHA256@"
+
+  url "https://github.com/jailwick/jailwick/releases/download/v#{version}/jailwick-app_#{version}_darwin_universal.zip"
+  name "jailwick"
+  desc "Desktop app for jailwick: AI coding agents in a sandbox per repo"
+  homepage "https://github.com/jailwick/jailwick"
+
+  depends_on macos: ">= :ventura"
+  depends_on formula: "jailwick/tap/jailwick"
+
+  app "jailwick.app"
+
+  zap trash: "~/Library/Saved Application State/app.jailwick.desktop.savedState"
+end

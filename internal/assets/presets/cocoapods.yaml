@@ -1,0 +1,6 @@
+description: "CocoaPods specs; most pods download from GitHub, so add github too"
+category: packages
+hosts: [cdn.cocoapods.org]
+detect:
+  files: [Podfile]
+docs: https://guides.cocoapods.org

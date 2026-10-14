@@ -1,0 +1,7 @@
+description: "GitHub: clone, fetch, push, releases, raw files, the gh CLI"
+category: code
+hosts: [".github.com", ".githubusercontent.com"]
+detect:
+  remotes: [github.com]
+broad: anyone can push to their own repositories and gists
+docs: https://docs.github.com

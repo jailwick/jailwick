@@ -1,0 +1,4 @@
+description: VS Code server (only when an editor attaches)
+category: editors
+hosts: [update.code.visualstudio.com, marketplace.visualstudio.com, ".vscode-cdn.net", ".gallerycdn.vsassets.io", vscode.download.prss.microsoft.com]
+docs: https://code.visualstudio.com/docs/remote/remote-overview

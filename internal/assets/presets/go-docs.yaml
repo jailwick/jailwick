@@ -1,0 +1,4 @@
+description: Go documentation and package docs
+category: docs
+hosts: [go.dev, pkg.go.dev]
+docs: https://go.dev/doc/

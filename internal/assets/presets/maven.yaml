@@ -1,0 +1,6 @@
+description: "Maven and Gradle (JVM, Android)"
+category: packages
+hosts: [repo.maven.apache.org, repo1.maven.org, services.gradle.org, downloads.gradle.org, plugins.gradle.org, plugins-artifacts.gradle.org, dl.google.com, maven.google.com]
+detect:
+  files: [pom.xml, build.gradle, build.gradle.kts, settings.gradle, settings.gradle.kts, gradlew]
+docs: https://docs.gradle.org

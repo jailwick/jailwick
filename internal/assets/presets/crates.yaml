@@ -1,0 +1,6 @@
+description: Rust crates (cargo)
+category: packages
+hosts: [crates.io, static.crates.io, index.crates.io]
+detect:
+  files: [Cargo.toml]
+docs: https://doc.rust-lang.org/cargo/

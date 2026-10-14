@@ -1,0 +1,6 @@
+description: "PHP packages (Composer); package archives come from GitHub, so add github too"
+category: packages
+hosts: [".packagist.org"]
+detect:
+  files: [composer.json]
+docs: https://getcomposer.org/doc/

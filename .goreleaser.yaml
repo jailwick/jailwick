@@ -1,0 +1,59 @@
+# Releases the jailwick CLI: binaries for macOS and Linux, archives, checksums, a draft GitHub
+# release and the Homebrew formula. The desktop app needs cgo and Apple's signing tools, so it is
+# built, signed and notarized on a Mac first (scripts/release-mac.sh) and attached here.
+# See docs/RELEASING.md.
+version: 2
+project_name: jailwick
+
+before:
+  hooks:
+    # The tag names the version in the VERSION file; the binaries read that file.
+    - sh -c 'test "v$(cat VERSION)" = "{{ .Tag }}" || { echo "tag {{ .Tag }} is not v$(cat VERSION) (VERSION)"; exit 1; }'
+    - make agent
+    - make web
+
+builds:
+  - id: jailwick
+    main: ./cmd/jailwick
+    binary: jailwick
+    env: [CGO_ENABLED=0]
+    goos: [darwin, linux]
+    goarch: [amd64, arm64]
+    flags: [-trimpath]
+    ldflags: [-s -w]
+
+archives:
+  - id: jailwick
+    ids: [jailwick]
+    formats: [tar.gz]
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files: [LICENSE, README.md, SECURITY.md]
+
+checksum:
+  name_template: checksums.txt
+  algorithm: sha256
+
+release:
+  github:
+    owner: jailwick
+    name: jailwick
+  draft: true # published by hand, after the app is attached and checked
+  extra_files:
+    - glob: ./dist-app/jailwick-app_*.zip
+
+brews:
+  - name: jailwick
+    ids: [jailwick]
+    repository:
+      owner: jailwick
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
+    directory: Formula
+    homepage: https://github.com/jailwick/jailwick
+    description: AI coding agents in a locked-down sandbox per repo
+    license: MIT
+    install: |
+      bin.install "jailwick"
+      bin.install_symlink "jailwick" => "jw"
+    test: |
+      assert_match version.to_s, shell_output("#{bin}/jailwick version")

@@ -1,0 +1,6 @@
+description: Terraform providers and modules from the HashiCorp registry
+category: toolchains
+hosts: [registry.terraform.io, releases.hashicorp.com]
+detect:
+  files: ["*.tf", ".terraform.lock.hcl"]
+docs: https://developer.hashicorp.com/terraform/registry

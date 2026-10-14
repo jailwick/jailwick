@@ -1,0 +1,7 @@
+description: "JSR, the JavaScript registry (Deno and npm)"
+category: packages
+hosts: [jsr.io, npm.jsr.io]
+detect:
+  files: [jsr.json]
+  packages: ["@jsr/*"]
+docs: https://jsr.io/docs

@@ -1,0 +1,4 @@
+description: Documentation hosted on Read the Docs
+category: docs
+hosts: [".readthedocs.io"]
+docs: https://about.readthedocs.com

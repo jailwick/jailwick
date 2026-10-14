@@ -1,0 +1,6 @@
+description: "Claude Code: the API, sign-in, updates, feature flags and error reports"
+category: agent
+hosts: [api.anthropic.com, statsig.anthropic.com, console.anthropic.com, platform.claude.com, claude.ai, downloads.claude.ai, ".statsig.com", ".sentry.io"]
+broad: error reports (.sentry.io) and feature flags (.statsig.com) accept data from anyone
+docs: https://docs.anthropic.com/en/docs/claude-code
+always: true

@@ -1,0 +1,6 @@
+description: "npm, yarn and pnpm packages, and Node headers for native modules"
+category: packages
+hosts: [registry.npmjs.org, registry.yarnpkg.com, repo.yarnpkg.com, nodejs.org]
+detect:
+  files: [package.json]
+docs: https://docs.npmjs.com

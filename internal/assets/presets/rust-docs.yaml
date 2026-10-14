@@ -1,0 +1,4 @@
+description: Rust documentation and crate docs
+category: docs
+hosts: [doc.rust-lang.org, docs.rs]
+docs: https://doc.rust-lang.org

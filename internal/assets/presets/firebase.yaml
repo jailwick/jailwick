@@ -1,0 +1,7 @@
+description: "Firebase (Firestore, Realtime Database, Auth, Storage)"
+category: services
+hosts: [firestore.googleapis.com, ".firebaseio.com", identitytoolkit.googleapis.com, securetoken.googleapis.com, firebasestorage.googleapis.com]
+detect:
+  packages: [firebase, firebase-admin, "firebase.google.com/go*"]
+broad: "any Firebase project's storage and database can receive data"
+docs: https://firebase.google.com/docs

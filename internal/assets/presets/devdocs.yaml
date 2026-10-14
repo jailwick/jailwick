@@ -1,0 +1,4 @@
+description: "DevDocs: API documentation for many languages"
+category: docs
+hosts: [".devdocs.io"]
+docs: https://devdocs.io

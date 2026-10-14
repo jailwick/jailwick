@@ -1,0 +1,7 @@
+description: Sentry error reporting
+category: services
+hosts: [".sentry.io"]
+detect:
+  packages: ["@sentry/*", sentry-sdk, github.com/getsentry/sentry-go, sentry-ruby, sentry/sentry]
+broad: "any Sentry project accepts events, from anyone with its key"
+docs: https://docs.sentry.io

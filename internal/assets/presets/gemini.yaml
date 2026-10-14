@@ -1,0 +1,6 @@
+description: The Gemini API
+category: services
+hosts: [generativelanguage.googleapis.com]
+detect:
+  packages: ["@google/genai", "@google/generative-ai", google-genai, google-generativeai, "@ai-sdk/google"]
+docs: https://ai.google.dev/gemini-api/docs

@@ -1,0 +1,6 @@
+description: Ruby gems (bundler)
+category: packages
+hosts: [".rubygems.org"]
+detect:
+  files: [Gemfile, "*.gemspec"]
+docs: https://guides.rubygems.org

@@ -1,0 +1,4 @@
+description: Stack Overflow questions and answers
+category: docs
+hosts: [".stackoverflow.com"]
+docs: https://stackoverflow.com

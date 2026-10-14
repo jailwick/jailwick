@@ -1,0 +1,6 @@
+description: The OpenAI API
+category: services
+hosts: [api.openai.com]
+detect:
+  packages: [openai, "@ai-sdk/openai", langchain-openai, "github.com/openai/openai-go*", github.com/sashabaranov/go-openai]
+docs: https://platform.openai.com/docs
